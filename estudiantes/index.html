@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Alumnos | cetis39</title>
+</head>
+<body>
+    <form id="login">
+      <div>
+        <label>Numero de control: </label>
+        <input type="text" id="num_control" required>
+      </div>  
+      <div>
+        <label>contraseña</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="mensaje"></p>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const num_control = document.getElementById('num_control').value.trim();
+      const password = document.getElementById('password').value;
+      const mensaje = document.getElementById('mensaje');
+
+      try {
+        const res = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ num_control, password })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          mensaje.style.color = 'red';
+          mensaje.textContent = data.error || 'Error al iniciar sesión';
+          return;
+        }
+
+        // Login correcto
+        mensaje.style.color = 'green';
+        mensaje.textContent = `Bienvenido, ${data.estudiante.nombre}`;
+        
+        // Redirigir después de un momento
+        setTimeout(() => {
+          window.location.href = '/dashboard'; // o la página que quieras
+        }, 1000);
+
+      } catch (err) {
+        mensaje.style.color = 'red';
+        mensaje.textContent = 'Error de conexión';
+      }
+    });
+  </script>
+</body>
+</html>
