@@ -1,0 +1,47 @@
+Guinda Institucional
+
+    HEX: #7A0C22
+
+    RGB: (122, 12, 34)
+
+Azul Marino Profundo
+
+    HEX: #1B2A4A
+
+    RGB: (27, 42, 74)
+
+Gris Carbón
+
+    HEX: #333333
+
+    RGB: (51, 51, 51)
+
+Gris Medio
+
+    HEX: #7D7D7D
+
+    RGB: (125, 125, 125)
+
+Blanco Roto (Gris Muy Claro)
+
+    HEX: #F4F5F7
+
+    RGB: (244, 245, 247)
+
+Dorado Ocre
+
+    HEX: #C4A47C
+
+    RGB: (196, 164, 124)
+
+Gris Claro (Bordes)
+
+    HEX: #E0E0E0
+
+    RGB: (224, 224, 224)
+
+Blanco Puro (Para tarjetas)
+
+    HEX: #FFFFFF
+
+    RGB: (255, 255, 255)
