@@ -1,0 +1,39 @@
+. Documentación de Requerimientos y Alcance (BRD / SRS)
+
+    Descripción del Sistema: Propósito del software (automatizar el cobro de inscripciones semestrales mediante CoDi BBVA).
+
+    Matriz de Roles y Permisos (RBAC): Detalle estricto de lo que puede y no puede hacer cada actor (Estudiante, Contador, Técnico).
+
+    Casos de Uso: Flujos detallados de cómo un alumno realiza un pago por CoDi y cómo el contador audita el proceso.
+
+2. Documentación de Arquitectura y Diseño Técnico
+
+    Diagrama de Arquitectura: Estructura del servidor, controladores, vistas y conexión a SQLite3.
+
+    Diccionario de Datos: Explicación detallada de cada tabla, tipos de datos y relaciones en SQLite (como el modelo propuesto arriba).
+
+    Diagrama de Flujo de Pago CoDi: Secuencia de cómo se genera la solicitud de cobro digital hacia BBVA y la respuesta del estado de la transacción.
+
+3. Documentación de Seguridad y Auditoría (Bitácora)
+
+    Política de Credenciales y Hasheo: Uso obligatorio de algoritmos seguros (como bcrypt o Argon2) para las contraseñas.
+
+    Especificación del changelog.log:
+
+        Definir el formato estricto de registro: [TIMESTAMP] [ROL] [USUARIO_ID] [ACCION_REALIZADA] [DETALLES_MODIFICACION].
+
+        Indicar qué acciones disparan obligatoriamente una entrada (cambios en datos bancarios CoDi/BBVA por el contador, y altas/bajas de alumnos por el técnico).
+
+4. Manual de Usuario y Guía de Operación
+
+    Guía para el Estudiante: Pasos ilustrados para iniciar sesión, consultar su adeudo semestral y escanear/pagar con CoDi desde su app bancaria.
+
+    Guía para el Contador: Cómo verificar estatus de pagos, filtrar listas por grupos y actualizar las llaves/cuentas de BBVA de forma segura.
+
+    Guía para el Técnico: Cómo realizar altas y bajas de alumnos en el sistema.
+
+5. Documentación de Despliegue y Mantenimiento (DevOps)
+
+    Guía de Instalación: Requisitos del entorno (Node.js, Python, PHP, etc., dependiendo del stack que elijas), clonación del repositorio y configuración de variables de entorno.
+
+    Gestión de la Base de Datos SQLite: Instrucciones sobre dónde se almacena localmente el archivo .db, políticas de respaldos automáticos y seguridad del archivo ante accesos no autorizados en el servidor.
